@@ -18,6 +18,8 @@ const getCookie = (name) => {
   }
   return null
 }
+// NOTE: Authentication.
+const loginForm = document.getElementById('login-form')
 
 // Load the saved checkbox state from the cookie
 if (getCookie('rememberMe') === 'true') {
@@ -27,8 +29,7 @@ if (getCookie('rememberMe') === 'true') {
   loginForm.password.value = getCookie('password')
 }
 
-// NOTE: Authentication.
-const loginForm = document.getElementById('login-form')
+
 
 const handleSubmitLogin = (event) => {
   event.preventDefault()

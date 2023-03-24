@@ -14,7 +14,7 @@ const handleSubmitRegister = (event) => {
   axios
     .post('http://127.0.0.1:3000/register', { name, email, password })
     .then((_) => {
-      window.location.href = 'login.html'
+      window.location.href = 'signin'
     })
     .catch((error) => {
       console.error(error)

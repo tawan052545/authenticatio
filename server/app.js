@@ -35,7 +35,7 @@ app.post('/register', (req, res) => {
         } else {
           res
             .status(200)
-            .send({ success: false, message: 'User registered successfully' })
+            .send({ success: true, message: 'User registered successfully' })
         }
       })
     }
@@ -44,7 +44,6 @@ app.post('/register', (req, res) => {
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body
-  console.log({ email, password })
   const sql = 'SELECT * FROM users WHERE email = ?'
   db.get(sql, [email], (err, user) => {
     if (err) {

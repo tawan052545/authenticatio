@@ -1,6 +1,6 @@
 const user = localStorage.getItem('USER_DATA')
 if (!user) {
-  window.location.href = 'login.html'
+  window.location.href = 'signin.html'
 } else {
   const { name, email } = JSON.parse(user)
   const h3 = document.getElementById('user-profile')
@@ -10,8 +10,8 @@ if (!user) {
 const signOut = document.querySelector('#sign-out')
 
 signOut.addEventListener('click', () => {
-  localStorage.removeItem()
-  window.location.href = 'login.html'
+  clearLocalStorage()
+  window.location.href = 'signin.html'
 })
 
 const clearLocalStorage = () => {
